@@ -5,7 +5,7 @@ import { AllSerService } from '../all-ser.service';
 import { Subscription } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 // import { AuthServiceService } from 'src/app/authentication/auth-service.service';
-import { talent } from 'D:/Clinic2/backend/server/routes/Talent.js';
+// import { talent } from 'D:/Clinic2/backend/server/routes/Talent.js';
 import { Route, Router } from '@angular/router';
 
 @Component({
@@ -18,7 +18,7 @@ export class DisplayComponent implements OnInit {
 
   userId: string;
   userIsAuthenticated = false;
-  talents: talent[] = [];
+  talents: any[] = [];
   totalCount: number;
   private postsSub: Subscription | undefined;
   router: any;
@@ -30,7 +30,7 @@ export class DisplayComponent implements OnInit {
  
     this.userId = this.Tservices.getUserId(); 
     this.postsSub = this.Tservices.talentsUpdatedListener() 
-    .subscribe((postData:{talents:talent[],talentCount:number})=>{ 
+    .subscribe((postData:{talents:any[],talentCount:number})=>{ 
       console.log(postData.talents); 
       console.log(postData.talentCount); 
       this.talents=postData.talents; 
