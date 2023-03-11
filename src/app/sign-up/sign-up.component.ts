@@ -36,7 +36,7 @@ export class SignUpComponent implements OnInit {
   }
   register() {
     this.http
-      .post('https://clinic-management-backend.azurewebsites.net//api/register', this.myForm.getRawValue())
+      .post('https://clinic-management-backend.azurewebsites.net/api/register', this.myForm.getRawValue())
       .subscribe(() => {
         // console.log(res);
         this.router.navigate(['./Login']);

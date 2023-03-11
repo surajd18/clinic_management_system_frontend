@@ -89,7 +89,7 @@ players = [
     values["problem"]=postData.get("problem");
     values["solution"]=postData.get("solution");
     values["date"]=postData.get("date");
-    this.http.post<{message:string,talent:any}>('https://clinic-management-backend.azurewebsites.net//api/talents',values) 
+    this.http.post<{message:string,talent:any}>('https://clinic-management-backend.azurewebsites.net/api/talents',values) 
     .subscribe(responceData=>{ 
       console.log(responceData.message); 
       console.log(responceData.talent); 

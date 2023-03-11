@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
     });
   }
   submit(): void {
-    this.http.post('https://clinic-management-backend.azurewebsites.net//api/login', this.myForm.getRawValue(), {
+    this.http.post('https://clinic-management-backend.azurewebsites.net/api/login', this.myForm.getRawValue(), {
       withCredentials: true
     }).subscribe(() => this.router.navigate(['/display']));
     // alert("Invalid credentials");
