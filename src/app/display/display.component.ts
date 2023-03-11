@@ -4,7 +4,6 @@ import { AllSerService } from '../all-ser.service';
 // import { AddtalentService } from '../addtalent.service';
 import { Subscription } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-// import { AuthServiceService } from 'src/app/authentication/auth-service.service';
 // import { talent } from 'D:/Clinic2/backend/server/routes/Talent.js';
 import { Route, Router } from '@angular/router';
 

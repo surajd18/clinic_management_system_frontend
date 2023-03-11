@@ -2,7 +2,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { AllSerService } from '../all-ser.service';
-import {patient} from 'D:/Clinic2/backend/server/routes/patient.js'
+// import {patient} from 'D:/Clinic2/backend/server/routes/patient.js'
 import { map } from 'rxjs';
 
 @Component({
@@ -13,8 +13,8 @@ import { map } from 'rxjs';
 export class ScheduleComponent implements OnInit {
   userId: string;
   userIsAuthenticated = false;
-  // talents: talent[] = [];
-  patients: patient[]=[];
+  talents: any = [];
+  patients: any=[];
   totalCount: number;
   private postsSub: Subscription | undefined;
   router: any;
@@ -26,7 +26,7 @@ export class ScheduleComponent implements OnInit {
  
     this.userId = this.Tservices.getUserId(); 
     this.postsSub = this.Tservices.talentsUpdatedListener() 
-    .subscribe((postData:{talents:patient[],talentCount:number})=>{ 
+    .subscribe((postData:{talents:any[],talentCount:number})=>{ 
       console.log(postData.talents); 
       console.log(postData.talentCount); 
       this.patients=postData.talents; 
