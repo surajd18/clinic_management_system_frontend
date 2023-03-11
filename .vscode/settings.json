@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "undefined/subscriptions/e1987efe-c5bd-4501-81b3-ad6fea9d29ea/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/clinic-management-frontend",
+    "appService.deploySubpath": "."
+}

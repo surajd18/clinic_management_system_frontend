@@ -105,17 +105,17 @@ players = [
   { 
     return this.http.get<{
       _id:string,name:string,problem:string,solution:string,date:number,gender:string,status:false
-}>("https://clinic-management-backend.azurewebsites.net//api/talents/"+id); 
+}>("https://clinic-management-backend.azurewebsites.net/api/talents/"+id); 
   } 
  
   deleteTalents(id:string) 
   { 
-    return this.http.delete("https://clinic-management-backend.azurewebsites.net//api/talents/"+id); 
+    return this.http.delete("https://clinic-management-backend.azurewebsites.net/api/talents/"+id); 
   } 
  
   getTalents( ){ 
  
-    this.http.get<{message:string,talents:any,maxTalents:number}>('https://clinic-management-backend.azurewebsites.net//api/talents' ) 
+    this.http.get<{message:string,talents:any,maxTalents:number}>('https://clinic-management-backend.azurewebsites.net/api/talents' ) 
     .pipe(map((postData)=>{ 
       console.log(postData); 
       return {posts : postData.talents.map((post:any)=>{ 
@@ -161,7 +161,7 @@ players = [
         status:status 
       } 
  
-  this.http.put("https://clinic-management-backend.azurewebsites.net//api/talents/"+id,TalData) 
+  this.http.put("https://clinic-management-backend.azurewebsites.net/api/talents/"+id,TalData) 
   .subscribe(responce=>{ 
     console.log(responce)
   },error=>{
@@ -197,7 +197,7 @@ addPatient(name:string,date:string,email:string,phone:string,health:string,statu
     values["email"]=postData.get("email");
     values["phone"]=postData.get("phone");
     values["date"]=postData.get("date");
-    this.http.post<{message:string,patient:any}>('https://clinic-management-backend.azurewebsites.net//api/patients/appoinment',values) 
+    this.http.post<{message:string,patient:any}>('https://clinic-management-backend.azurewebsites.net/api/patients/appoinment',values) 
     .subscribe(responceData=>{ 
       console.log(responceData.message); 
       console.log(responceData.patient); 
@@ -206,7 +206,7 @@ addPatient(name:string,date:string,email:string,phone:string,health:string,statu
   } 
 getPatients( ){ 
  
-  this.http.get<{message:string,talents:any,maxTalents:number}>('https://clinic-management-backend.azurewebsites.net//api/patients' ) 
+  this.http.get<{message:string,talents:any,maxTalents:number}>('https://clinic-management-backend.azurewebsites.net/api/patients' ) 
   .pipe(map((postData)=>{ 
     console.log(postData); 
     return {posts : postData.talents.map((post:any)=>{ 
@@ -232,7 +232,7 @@ getPatient(id:string)
 { 
   return this.http.get<{
     _id:string,name:string,date:string,email: string,phone:string,health:string,status:false
-}>("https://clinic-management-backend.azurewebsites.net//api/patients/"+id); 
+}>("https://clinic-management-backend.azurewebsites.net/api/patients/"+id); 
 } 
 logout(){ 
   this.token=null; 
